@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\DiagnosticController;
 use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\Admin\DepartmentController;
 use App\Http\Controllers\Admin\DoctorController;
+use App\Http\Controllers\Admin\RegistrationContrller;
 use App\Http\Controllers\Doctor\PresceptionController;
 use App\Http\Controllers\Admin\RoomController;
 use App\Http\Controllers\Admin\ScheduleController;
@@ -38,6 +39,14 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'mi
     Route::get('/department/edit/{id}', [DepartmentController::class, 'edit'])->name('department.edit');
     Route::post('/department/update/{id}', [DepartmentController::class, 'update'])->name('department.update');
     Route::get('/department/delete/{id}', [DepartmentController::class, 'delete'])->name('department.delete');
+
+
+     Route::get('/user/index',[RegistrationContrller::class, 'index'])->name('user.index');
+     Route::post('/user/store',[RegistrationContrller::class,'store'])->name('user.store');
+     Route::get('/user/create',[RegistrationContrller::class,'create'])->name('user.create');
+// Route::get('/index/{id}',[RegistrationContrller::class,'delete'])->name('user.userdelete');
+// Route::get('/index/edit/{id}',[RegistrationContrller::class,'edit'])->name('user.edit');
+// Route::put('/index/update/{id}',[RegistrationContrller::class,'update'])->name('user.update');
 
     //Route::get('/doctor/index', [DoctorController::class, 'index'])->name('doctor.index');
     //Route::post('/doctor/store', [DoctorController::class, 'store'])->name('doctor.store');
@@ -143,7 +152,7 @@ Route::get('/diagnostic/show/{id}', [DiagnosticController::class, 'show'])->name
 Route::get('/diagnostic/delete/{id}', [DiagnosticController::class, 'delete'])->name('diagnostic.delete');
 
 
-Route::get('/payment/index', [PaymentController::class, 'index'])->name('payment.index');
+    Route::get('/payment/index', [PaymentController::class, 'index'])->name('payment.index');
     Route::get('/payment/create', [PaymentController::class, 'create'])->name('payment.create');
     Route::post('/payment/store', [PaymentController::class, 'store'])->name('payment.store');
     Route::get('/payment/edit/{id}', [PaymentController::class, 'edit'])->name('payment.edit');

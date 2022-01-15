@@ -47,7 +47,7 @@ class PaymentController extends Controller
     	]); 
     	//$payment->save();
     	//return redirect('/payment')->with('success','payment is Saved');  
-        return redirect()->route('admin.payment.index')->with('success','payment is Saved'); 
+        return redirect()->route('payment.index')->with('success','payment is Saved'); 
     	
     }
     public function edit($id)

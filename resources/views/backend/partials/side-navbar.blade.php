@@ -108,6 +108,14 @@
                             </a>
                             </li>
 
+                            <li class="sidebar-item {{ Route::is('') ? 'active' : '' }}">
+                            <a href="{{route('admin.user.index')}}" class='sidebar-link'>
+                                <i data-feather="home" width="20"></i>
+                                <span>User</span>
+                            </a>
+                            </li>
+
+
                             <li class="sidebar-item {{ Route::is('admin/department/index') ? 'active' : '' }}">
                             <a href="{{route('admin.department.index')}}" class='sidebar-link'>
                                 <i data-feather="home" width="20"></i>
